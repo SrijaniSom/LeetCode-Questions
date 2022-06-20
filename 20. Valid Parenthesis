@@ -1,0 +1,56 @@
+class Solution {
+    public boolean isValid(String s) {
+       Stack<Character> st= new Stack<>();
+        for(int i=0;i<s.length();i++)
+        {
+            if(s.charAt(i)=='(' || s.charAt(i)=='{' || s.charAt(i)=='[')
+            {
+                st.push(s.charAt(i));
+            }
+            else if(s.charAt(i) == ')')
+            {
+                boolean val=handleClosing(st,'(');
+                if(val==false)
+                    return false;
+            }
+            else if(s.charAt(i) == '}')
+            {
+                 boolean val=handleClosing(st,'{');
+                if(val==false)
+                    return false;
+            }
+            else if(s.charAt(i)==']')
+            {
+                 boolean val=handleClosing(st,'[');
+                if(val==false)
+                    return false;
+            }
+        }
+        
+        if(st.size()==0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    
+    public boolean handleClosing(Stack<Character> sta,char corresopening )
+    {
+        if(sta.size()==0)
+        {
+            return false;
+        }
+        else if(sta.peek()!=corresopening)
+        {
+            return false;
+        }
+        else
+        {
+            sta.pop();
+            return(true);
+        }
+    }
+}
