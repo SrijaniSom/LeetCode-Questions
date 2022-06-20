@@ -54,3 +54,9 @@ class Solution {
         }
     }
 }
+
+/***********************************************************/
+
+Explanation: https://www.youtube.com/watch?v=uuE2pEjLiEI&t=669s
+First, create a stack of characters. Now, you need to have 4 separate conditiond(1 for all opening bracs+ 3 clos). if it is opening brac, simply push the char in the stack. If it is closing bracket check 3 conditions: 1. if the stack is empty(this means cloasing bracket is extra) , 2. the peep item is a different brac( false condition again) 3. if the opening bracket matches, pop it. Finally, out of the loop check if the stack is empty or not. If empty, it is perfect, return true otherwise return false.
+
