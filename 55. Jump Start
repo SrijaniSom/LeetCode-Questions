@@ -14,3 +14,7 @@ class Solution {
                 return true;
     }
 }
+
+/***************************************************/
+Resource: https://www.youtube.com/watch?v=muDPTDrpS28(important)
+Valley-Peak ALgorithm
