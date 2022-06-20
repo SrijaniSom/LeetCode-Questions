@@ -1,0 +1,36 @@
+import java.util.*;
+class findduplicate
+{
+    public static void main(String args[])
+    {
+         Scanner sc=new Scanner(System.in);
+    System.out.println("enter the string");
+    String str=sc.nextLine();
+    HashMap<Character, Integer> hm=new HashMap<>();
+    for(int i=0;i<str.length();i++)
+    {
+       if(!hm.containsKey(str.charAt(i)))
+       {
+          hm.put(str.charAt(i),1); 
+       }
+       else
+       {
+           hm.put(str.charAt(i),hm.get(str.charAt(i))+1);
+       }
+       
+       for(Map.Entry mapelement:hm.entrySet())
+       {
+           char key=(char)mapelement.getKey();
+           int value=(int)mapelement.getValue();
+           if(value>1)
+           System.out.println(key+" has a count of"+value);
+       }
+       }
+        
+    }
+   
+    }
+    
+/**********************************/
+Resource: https://www.geeksforgeeks.org/print-all-the-duplicates-in-the-input-string/
+Use the HashMap Method
