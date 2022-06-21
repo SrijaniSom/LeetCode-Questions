@@ -1,0 +1,39 @@
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int c1=0;//index for nums1
+        int c2=0;//index for nums2
+        int c3=0;//index for array final
+        int arr[]=new int[m+n];
+       
+       while(c1<m && c2<n)
+       {
+           if(nums1[c1]<nums2[c2])
+           {
+               arr[c3]=nums1[c1];
+               c1++;
+           }
+           else
+           {
+               arr[c3]=nums2[c2];
+               c2++;
+           }
+            c3++;
+       }
+        
+        while(c1<m)
+        {
+            arr[c3]=nums1[c1];
+            c1++;
+            c3++;
+        }
+        while(c2<n)
+        {
+            arr[c3]=nums2[c2];
+            c2++;
+            c3++;
+        }
+      
+        for(int j=0;j<(n+m);j++)
+            nums1[j]=arr[j];
+    }
+}
