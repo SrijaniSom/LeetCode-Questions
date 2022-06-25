@@ -1,0 +1,68 @@
+class Solution {
+    public void sortColors(int[] nums) {
+        HashMap<Integer,Integer> hm= new HashMap<Integer, Integer>();
+         for(int i=0;i<3;i++){
+            hm.put(i,0);
+        }
+        for(int i=0;i<nums.length;i++)
+        {
+            if(nums[i]==0)
+            {
+                if(!(hm.containsKey(0)))
+                      hm.put(0,1);
+                else
+                    hm.put(0,hm.get(0)+1);
+            }
+            
+           else if(nums[i]==1)
+            {
+                if(!(hm.containsKey(1)))
+                      hm.put(1,1);
+                else
+                    hm.put(1,hm.get(1)+1);
+            }
+              
+           else if(nums[i]==2)
+            {
+                if(!(hm.containsKey(2)))
+                      hm.put(2,1);
+                else
+                    hm.put(2,hm.get(2)+1);
+            }
+              
+        }
+        
+    int count0=hm.get(0);
+    int count1=hm.get(1);
+    int count2=hm.get(2);
+    int idx=0;
+        
+        for(int i=0;i<count0;i++)
+        {
+            nums[idx]=0;
+            idx++;
+        }
+    
+          for(int i=0;i<count1;i++)
+        {
+            nums[idx]=1;
+            idx++;
+        }
+        
+          for(int i=0;i<count2;i++)
+        {
+            nums[idx]=2;
+            idx++;
+        }
+        
+        
+        
+        
+       
+      
+       
+        
+        
+        
+    }
+}
