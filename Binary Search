@@ -1,0 +1,38 @@
+class Main
+{
+public static void main(String args[])
+{
+  int[] nums={2,6,9,19,29,33,41,56,61,63,70};
+  int target=56;
+  int index=searchfunc(nums,target);
+  System.out.println("the num "+target+" is found at index="+index);
+}
+    public static int searchfunc(int[] arr,int target)
+    {
+        int start=0;
+        int end=arr.length-1;
+      
+        int index=-1;
+        
+        while(start<=end)
+        {
+            int mid=(start+end)/2;
+            if(target<arr[mid])
+            end=mid-1;
+            else if(target>arr[mid])
+            start=mid+1;
+            else if(target == arr[mid])
+            {
+                index=mid;
+                break;
+            }
+        }
+            return(index);
+    }
+    
+}
+
+OUTPUT:
+java -cp /tmp/2X3oLRnGLY Main
+
+the num 56 is found at index=7
