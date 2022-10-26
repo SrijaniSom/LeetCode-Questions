@@ -1,0 +1,30 @@
+class Main
+{
+public static void main(String args[])
+{
+    String name="Kunal Kushwaha";
+    char target='u';
+    int index=searchfunc(name,target);
+    System.out.println(" The character "+target+" is found at index="+index);
+}
+		public static int searchfunc(String name,char target)
+		{
+        	if( name.length() == 0)
+        	return -1;
+        	
+        	for( int i=0;i<name.length();i++)
+        	{
+        	    if(name.charAt(i)==target)
+        	    return i;
+        	}
+        	    return -1;
+	
+	
+		}
+}
+
+
+OUTPUT:
+java -cp /tmp/rOTXtBlu7W Main
+
+The character u is found at index=1
