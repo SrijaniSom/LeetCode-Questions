@@ -1,0 +1,39 @@
+import java.io.*;
+import java.util.*;
+class Main
+{
+    public static void main(String args[])
+    {
+        int[] nums={2,5,1,4,3};
+        int[] fin=selectionsort(nums);
+        System.out.println(Arrays.toString(fin));
+        
+    }
+    static int[] selectionsort(int[] arr)
+    {
+        for(int i=0;i<arr.length;i++)
+        {
+                int last=arr.length-i-1;
+                int max=getMax(arr,0,last);
+                swap(arr,max,last);
+        }
+            return arr;
+    }
+    
+    static int getMax(int[] arr, int start, int last)
+    {
+        int max=start;
+        for(int i=start;i<=last;i++)
+        {
+            if(arr[i]>arr[max])
+            max=i;
+        }
+            return max;
+    }
+    static void swap(int[] arr,int maxIndex,int LastIndex)
+    {
+        int temp=arr[maxIndex];
+        arr[maxIndex]=arr[LastIndex];
+        arr[LastIndex]=temp;
+    }
+}
